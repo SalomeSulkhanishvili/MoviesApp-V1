@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecommendationsCell" id="gTV-IL-0wX" customClass="RecommendationsCell" customModule="MoviesApp_V1" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="304" height="207"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="304" height="207"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX6-pr-lNa">
+                        <rect key="frame" x="0.0" y="0.0" width="304" height="207"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EP-ca-PdQ">
+                                <rect key="frame" x="5" y="170.5" width="294" height="36.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="film name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpb-mu-Sot">
+                                        <rect key="frame" x="0.0" y="0.0" width="206" height="36.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa9-tf-UCj">
+                                        <rect key="frame" x="206" y="0.0" width="88" height="36.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Xpb-mu-Sot" firstAttribute="width" secondItem="0EP-ca-PdQ" secondAttribute="width" multiplier="0.7" id="dKq-sO-4WA"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UnknownImage" translatesAutoresizingMaskIntoConstraints="NO" id="e1n-lV-Vhz">
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="165.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="e1n-lV-Vhz" firstAttribute="top" secondItem="LX6-pr-lNa" secondAttribute="top" id="E8M-zB-LxB"/>
+                            <constraint firstAttribute="trailing" secondItem="0EP-ca-PdQ" secondAttribute="trailing" constant="5" id="KpZ-KB-bYg"/>
+                            <constraint firstAttribute="trailing" secondItem="e1n-lV-Vhz" secondAttribute="trailing" id="LGJ-xG-S8l"/>
+                            <constraint firstItem="0EP-ca-PdQ" firstAttribute="leading" secondItem="LX6-pr-lNa" secondAttribute="leading" constant="5" id="P6k-6I-iGy"/>
+                            <constraint firstItem="e1n-lV-Vhz" firstAttribute="leading" secondItem="LX6-pr-lNa" secondAttribute="leading" id="PZi-lZ-VpU"/>
+                            <constraint firstItem="0EP-ca-PdQ" firstAttribute="top" secondItem="e1n-lV-Vhz" secondAttribute="bottom" constant="5" id="eoY-gJ-vhl"/>
+                            <constraint firstAttribute="bottom" secondItem="0EP-ca-PdQ" secondAttribute="bottom" id="nWW-qJ-F7g"/>
+                            <constraint firstItem="e1n-lV-Vhz" firstAttribute="height" secondItem="LX6-pr-lNa" secondAttribute="height" multiplier="0.8" id="tHM-XE-2DZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="LX6-pr-lNa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5gQ-nE-edP"/>
+                <constraint firstItem="LX6-pr-lNa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8gE-0g-DXt"/>
+                <constraint firstAttribute="trailing" secondItem="LX6-pr-lNa" secondAttribute="trailing" id="kos-y4-dUB"/>
+                <constraint firstAttribute="bottom" secondItem="LX6-pr-lNa" secondAttribute="bottom" id="vyc-NW-bxw"/>
+            </constraints>
+            <size key="customSize" width="420" height="213"/>
+            <connections>
+                <outlet property="recommendationImageView" destination="e1n-lV-Vhz" id="4eY-KQ-Iog"/>
+                <outlet property="recommendationNameLabel" destination="Xpb-mu-Sot" id="guT-F5-hWb"/>
+                <outlet property="recommendationRatingLabel" destination="Sa9-tf-UCj" id="Bqt-6O-jgh"/>
+            </connections>
+            <point key="canvasLocation" x="218.84057971014494" y="75.334821428571431"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="UnknownImage" width="259" height="194"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CastCell" id="gTV-IL-0wX" customClass="CastCell" customModule="MoviesApp_V1" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kn4-nM-RUm">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UnknownPerson" translatesAutoresizingMaskIntoConstraints="NO" id="is4-z2-lLj">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="gCB-Mz-s6f"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="person Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bh3-5l-lMg">
+                                <rect key="frame" x="5" y="145" width="110" height="14.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLq-g8-8aw">
+                                <rect key="frame" x="5" y="164.5" width="110" height="11"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="is4-z2-lLj" firstAttribute="leading" secondItem="kn4-nM-RUm" secondAttribute="leading" id="3iq-qt-hMt"/>
+                            <constraint firstItem="TLq-g8-8aw" firstAttribute="top" secondItem="bh3-5l-lMg" secondAttribute="bottom" constant="5" id="HJF-nW-ioS"/>
+                            <constraint firstItem="is4-z2-lLj" firstAttribute="top" secondItem="kn4-nM-RUm" secondAttribute="top" id="MWM-fx-CoO"/>
+                            <constraint firstItem="TLq-g8-8aw" firstAttribute="leading" secondItem="bh3-5l-lMg" secondAttribute="leading" id="XXb-c2-m0S"/>
+                            <constraint firstItem="bh3-5l-lMg" firstAttribute="top" secondItem="is4-z2-lLj" secondAttribute="bottom" constant="5" id="gOJ-NA-Jkp"/>
+                            <constraint firstAttribute="trailing" secondItem="bh3-5l-lMg" secondAttribute="trailing" constant="5" id="jbi-OX-ze2"/>
+                            <constraint firstAttribute="trailing" secondItem="is4-z2-lLj" secondAttribute="trailing" id="ngD-IP-brf"/>
+                            <constraint firstItem="TLq-g8-8aw" firstAttribute="trailing" secondItem="bh3-5l-lMg" secondAttribute="trailing" id="pgn-hr-vW3"/>
+                            <constraint firstItem="bh3-5l-lMg" firstAttribute="leading" secondItem="kn4-nM-RUm" secondAttribute="leading" constant="5" id="swj-hp-cfJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="kn4-nM-RUm" secondAttribute="trailing" id="Ftc-yF-a5L"/>
+                <constraint firstItem="kn4-nM-RUm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="PmE-sn-DK2"/>
+                <constraint firstItem="kn4-nM-RUm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ubd-aj-cdQ"/>
+                <constraint firstAttribute="bottom" secondItem="kn4-nM-RUm" secondAttribute="bottom" id="aFY-BN-mf4"/>
+            </constraints>
+            <size key="customSize" width="180" height="271"/>
+            <connections>
+                <outlet property="personCharacterLabel" destination="TLq-g8-8aw" id="tiU-9P-LtD"/>
+                <outlet property="personImageView" destination="is4-z2-lLj" id="Mvx-qo-O5k"/>
+                <outlet property="personNameLabel" destination="bh3-5l-lMg" id="cO3-N1-JzR"/>
+            </connections>
+            <point key="canvasLocation" x="233.33333333333334" y="176.45089285714286"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="UnknownPerson" width="213" height="236"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
