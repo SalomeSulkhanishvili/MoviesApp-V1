@@ -42,13 +42,13 @@ class FavoriteViewController: UIViewController {
             self.movieIDs.removeAll()
             for response in responses {
                 self.movieIDs.append(response)
-                
             }
             
             DispatchQueue.main.async {
                 dispatchGroup.leave()
             }
         })
+        
         self.favoriteList.removeAll()
         for model in movieIDs {
             dispatchGroup.enter()
@@ -73,6 +73,7 @@ class FavoriteViewController: UIViewController {
     
 }
 
+//MARK: collectionView
 extension FavoriteViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favoriteList.count

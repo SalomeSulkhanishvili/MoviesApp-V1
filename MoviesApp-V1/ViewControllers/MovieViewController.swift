@@ -37,15 +37,10 @@ class MovieViewController: UIViewController {
         super.viewDidLoad()
         
         loadCollectionViews()
-        onRatingView()
         checkFavorite()
-        
-        ratingView.layer.cornerRadius = ratingView.frame.height / 2
-        moviewImageView.layer.cornerRadius = 20
-        moviewImageView.clipsToBounds = true
+        setUpViews()
         
         loadModel(model: selectedModel!)
-        print(selectedModel!.id ?? 0)
         getCast(category: selectedSubC!, movieID: selectedModel!.id ?? 0)
         getRecomendations(category: selectedSubC!, movieID: selectedModel!.id ?? 0)
         
@@ -65,7 +60,15 @@ class MovieViewController: UIViewController {
         }
     }
     
+    func setUpViews(){
+        onRatingView()
+        ratingView.layer.cornerRadius = ratingView.frame.height / 2
+        moviewImageView.layer.cornerRadius = 20
+        moviewImageView.clipsToBounds = true
+    }
     
+    //if selectedModel is not in favorites
+    //adds selected model id and subCategory in Core Data
     @IBAction func addInFavorites(_ sender: UIButton) {
         guard let id = selectedModel?.id else {return}
         
@@ -80,6 +83,7 @@ class MovieViewController: UIViewController {
         
     }
     
+    //checks if the Model is in Core Data or not
     func checkFavorite(){
         Coredata.fetchFavoriteMovie(completion: { (responses) in
             self.movieIDs.removeAll()
@@ -98,6 +102,8 @@ class MovieViewController: UIViewController {
         })
     }
     
+    //if selectedModel id is in movieIDs list
+    //output true else false
     func checkSelectedMovie() -> Bool{
         for id in movieIDs {
             if id == selectedModel?.id {
@@ -107,6 +113,7 @@ class MovieViewController: UIViewController {
         return false
     }
     
+    //setUp Rating view
     func onRatingView(){
         ratingView.backgroundColor = .clear
         let cp = CircularProgressView(frame: CGRect(x: 0.0, y: 0.0, width: ratingView.frame.width, height: ratingView.frame.height))
@@ -114,6 +121,7 @@ class MovieViewController: UIViewController {
         ratingView.addSubview(cp)
     }
     
+    //setUp Models general info
     func loadModel(model: Result){
         nameLabel.text = model.title ?? model.name ?? model.originalName ?? model.originalTitle
         yearLabel.text = model.releaseDate ?? model.firstAirDate
@@ -131,6 +139,7 @@ class MovieViewController: UIViewController {
         }
     }
     
+    //load collection Views
     func loadCollectionViews(){
         
         seriesCastCollectionView.delegate = self
@@ -151,6 +160,7 @@ class MovieViewController: UIViewController {
         var subCat = category
         if category == .Today || category == .ThisWeek{
             subCat = .Movie
+            self.selectedSubC = .Movie
         }
         
         let url = "https://api.themoviedb.org/3/\(subCat.rawValue)/\(String(movieID))/credits?api_key=\(API_KEY)"
@@ -165,14 +175,13 @@ class MovieViewController: UIViewController {
                     print("repeat")
                     self.getCast(category: .TV, movieID: self.selectedModel!.id ?? 0)
                     self.selectedSubC = .TV
-                }else{
-                    self.selectedSubC = .Movie
                 }
             }
             
         })
     }
     
+    //MARK: get recommendations API
     func getRecomendations(category: SubCategory, movieID: Int){
         var subCat = category
         if category == .Today || category == .ThisWeek{
@@ -233,14 +242,12 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         }
         return recomCell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
+        //move to persons detail view Controller
         if collectionView == seriesCastCollectionView {
             performSegue(withIdentifier: PersonDetailViewController.segueIdendifier, sender: self)
-        }else if collectionView == recommendationsCollectionView {
-            let vc = MovieViewController()
-            vc.selectedModel = recommentations[indexPath.row]
-            self.navigationController?.pushViewController(vc, animated: false)
         }
     }
     

@@ -33,16 +33,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OsT-3j-r3g">
-                                <rect key="frame" x="10" y="200" width="130" height="30.5"/>
+                                <rect key="frame" x="10" y="200" width="130" height="45"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwO-bj-hK0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwO-bj-hK0">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="13.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpL-oe-uXK">
-                                        <rect key="frame" x="0.0" y="18.5" width="130" height="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpL-oe-uXK">
+                                        <rect key="frame" x="0.0" y="18.5" width="130" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -61,6 +61,7 @@
                             <constraint firstAttribute="trailing" secondItem="OsT-3j-r3g" secondAttribute="trailing" constant="10" id="oGX-8N-Zdl"/>
                             <constraint firstItem="YRL-go-0PZ" firstAttribute="bottom" secondItem="6pN-35-eA5" secondAttribute="bottom" constant="20" id="xcz-Cn-sOY"/>
                             <constraint firstItem="OsT-3j-r3g" firstAttribute="leading" secondItem="ttm-zb-t1S" secondAttribute="leading" constant="10" id="y4q-pm-fbb"/>
+                            <constraint firstAttribute="bottom" secondItem="OsT-3j-r3g" secondAttribute="bottom" constant="5" id="zC1-XB-9Sg"/>
                         </constraints>
                     </view>
                 </subviews>

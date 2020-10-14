@@ -33,6 +33,8 @@ class HeaderCell: UITableViewCell {
         } else {
             // Fallback on earlier versions
         }
+        searchTextField.isHidden = true
+        searchButton.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

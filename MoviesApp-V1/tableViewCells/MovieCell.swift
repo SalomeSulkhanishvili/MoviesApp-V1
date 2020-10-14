@@ -7,18 +7,6 @@
 
 import UIKit
 
-enum GeneralCategory: String{
-    case Popular = "popular"
-    case Trending = "trending"
-}
-
-enum SubCategory: String {
-    case TV = "tv"
-    case Movie = "movie"
-    case Today = "day"
-    case ThisWeek = "week"
-}
-
 class MovieCell: UITableViewCell {
     static var identifier = "MovieCell"
 
@@ -35,9 +23,8 @@ class MovieCell: UITableViewCell {
         super.awakeFromNib()
         
     }
-
+    //change category in segment Controller
     @IBAction func changeCategory(_ sender: UISegmentedControl) {
-        //print("\(sender.selectedSegmentIndex)")
         changeSubCategory(category: generalC!, subC: subC!)
     }
     
@@ -47,6 +34,7 @@ class MovieCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //init collections
     func initCollection(){
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
@@ -89,8 +77,6 @@ class MovieCell: UITableViewCell {
 //MARK: collectionView
 extension MovieCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
 
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movieModel.count
     }
@@ -106,13 +92,7 @@ extension MovieCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSou
         print(indexPath.row)
         selectedModel = movieModel[indexPath.row]
         moveToSelectedMovie()
-        //notification to move info + perform segue in mainViewController
         
     }
-    
-    
-    
-    
-    
-    
+ 
 }

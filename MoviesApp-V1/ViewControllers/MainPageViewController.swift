@@ -34,6 +34,7 @@ class MainPageViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier, id == "detail_move_page" {
             if let movieVC = segue.destination as? MovieViewController{
@@ -43,25 +44,25 @@ class MainPageViewController: UIViewController {
             }
         }
     }
-    
+    //move to favorite page
     @IBAction func onFavorite(_ sender: UIButton) {
         performSegue(withIdentifier: "favorite_segue", sender: nil)
     }
+    
     //MARK: get tranding API
     func getTranding(){
-        // day or week
         trendingMovies.removeAll()
         let url = "https://api.themoviedb.org/3/trending/all/day?api_key=\(API_KEY)&fbclid=IwAR2LS9USY2OU74DWcXyc-mndfQ8YOu_4H8dFTgDC3XqPc8XS66A9xTf2GJA"
         APIServices.get(url: url, completion: { (response: PopularTrandingModels) in
             for result in response.results{
                 print(result)
             }
-
         })
     }
     
     //MARK: get movie api
     func getCategory(category: GeneralCategory, subC: SubCategory){
+        //if category is popular get popular api
         if category == .Popular {
             popularMovies.removeAll()
             let url = "https://api.themoviedb.org/3/\(subC.rawValue)/popular?api_key=\(API_KEY)&language=en-US&page=2"
@@ -74,6 +75,7 @@ class MainPageViewController: UIViewController {
                 }
                 
             })
+            //if category is trending get trending api
         }else if category == .Trending {
             trendingMovies.removeAll()
             let url = "https://api.themoviedb.org/3/trending/all/\(subC.rawValue)?api_key=\(API_KEY)&fbclid=IwAR2LS9USY2OU74DWcXyc-mndfQ8YOu_4H8dFTgDC3XqPc8XS66A9xTf2GJA"
@@ -90,7 +92,7 @@ class MainPageViewController: UIViewController {
 
     }
     
-    
+    //MARK: Notifications
     func notifications(){
         NotificationCenter.default.addObserver(
             self,
@@ -123,6 +125,8 @@ class MainPageViewController: UIViewController {
         }
     }
     
+    //input general category and sub Category
+    //
     func changeCat(_ category: GeneralCategory, _ subC: SubCategory){
         if category == .Popular{
             if subC == .Movie {
@@ -145,6 +149,7 @@ class MainPageViewController: UIViewController {
         }
     }
     
+    //loads popular and trending api for the first time
     func loadData(){
         let dispatchGroup = DispatchGroup()
         
@@ -186,6 +191,7 @@ class MainPageViewController: UIViewController {
 
 }
 
+//MARK: tableView
 extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
